@@ -5,7 +5,6 @@
         public int CaseId { get; set; }
         public int TenantId { get; set; }
         public string CaseNumber { get; set; } = string.Empty;
-        public int ClientId { get; set; }
         public string CaseTitle { get; set; } = string.Empty;
         public string? CaseType { get; set; } // Civil, Legal, Medical, Technical, Other
         public string? CourtName { get; set; }
@@ -21,7 +20,6 @@
 
 		// Navigation properties
 		public Tenant Tenant { get; set; } = null!;
-		public Client Client { get; set; } = null!;
-
+        public ICollection<CaseClient> CaseClients { get; set; } = new List<CaseClient>();
 	}
 }

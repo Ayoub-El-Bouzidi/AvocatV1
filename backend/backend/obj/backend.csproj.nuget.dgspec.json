@@ -73,6 +73,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[10.0.0, )"
+            },
+            "Sentry.AspNetCore": {
+              "target": "Package",
+              "version": "[5.16.2, )"
             }
           },
           "imports": [

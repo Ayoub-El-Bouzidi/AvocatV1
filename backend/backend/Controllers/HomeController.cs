@@ -1,6 +1,7 @@
 using System.Diagnostics;
 using backend.Models;
 using Microsoft.AspNetCore.Mvc;
+using Sentry;
 
 namespace backend.Controllers
 {
@@ -21,5 +22,11 @@ namespace backend.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+        // test sentry
+        public IActionResult TestSentry()
+        {
+            SentrySdk.CaptureMessage("This is a test message from HomeController.TestSentry");
+            return Content("Sentry test message sent.");
+		}
     }
 }

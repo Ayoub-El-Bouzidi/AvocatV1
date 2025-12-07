@@ -20,6 +20,6 @@
 
 		// Navigation properties
         public Tenant Tenant { get; set; } = null!;
-        public ICollection<Case> Cases { get; set; } = new List<Case>();
+        public ICollection<CaseClient> CaseClients { get; set; } = new List<CaseClient>();
 	}
 }
