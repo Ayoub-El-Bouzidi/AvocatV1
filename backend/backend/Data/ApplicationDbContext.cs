@@ -85,11 +85,18 @@ namespace backend.Data
 					Phone = "+212-123-456-789",
 					SubscriptionPlan = "Professional",
 					SubscriptionStatus = "Active",
-					SubscriptionStartDate = DateTime.UtcNow,
+					SubscriptionStartDate = new DateTime(2024, 1, 1, 0, 0, 0, DateTimeKind.Utc), // ✅ Static date
 					IsActive = true,
-					CreatedDate = DateTime.UtcNow
+					CreatedDate = new DateTime(2024, 1, 1, 0, 0, 0, DateTimeKind.Utc)
 				}
 			);
+			modelBuilder.Entity<ApplicationUser>(entity =>
+			{
+				entity.HasOne(e => e.Tenant)
+					.WithMany()
+					.HasForeignKey(e => e.TenantId)
+					.OnDelete(DeleteBehavior.Restrict);
+			});
 		}
 	}
 }
