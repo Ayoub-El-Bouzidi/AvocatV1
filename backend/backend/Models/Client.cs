@@ -19,7 +19,7 @@
         public DateTime? ModifiedDate { get; set; }
 
 		// Navigation properties
-        public AplicationUser User { get; set; } = null!;
-        public ICollection<CaseClient> CaseClients { get; set; } = new List<CaseClient>();
+        public ApplicationUser User { get; set; } = null!;
+        public ICollection<Case> Cases { get; set; } = new List<Case>();
 	}
 }
