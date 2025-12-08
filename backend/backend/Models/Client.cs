@@ -3,11 +3,11 @@
     public class Client
     {
         public int ClientId { get; set; }
-        public int TenantId { get; set; }
-        public string ClintType { get; set; } = "Individual"; // Individual, Company
+        public int UserId { get; set; } = string.Empty
+        //public string ClintType { get; set; } = "Individual"; // Individual, Company
         public string? FirstName { get; set; }
         public string? LastName { get; set; }
-        public string? CompanyName { get; set; }
+        //public string? CompanyName { get; set; }
 		public string Email { get; set; } = string.Empty;
         public string? Phone { get; set; }
         public string? Adresse { get; set; }
@@ -19,7 +19,7 @@
         public DateTime? ModifiedDate { get; set; }
 
 		// Navigation properties
-        public Tenant Tenant { get; set; } = null!;
+        public AplicationUser User { get; set; } = null!;
         public ICollection<CaseClient> CaseClients { get; set; } = new List<CaseClient>();
 	}
 }
